@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7889736733657025707}
   - component: {fileID: 5573004789459597446}
   - component: {fileID: 3853810656088351055}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5583033949975370548}
   - component: {fileID: 2300547978672151228}
-  m_Layer: 0
+  - component: {fileID: 4338952368176662071}
+  m_Layer: 8
   m_Name: AppleTree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +134,7 @@ Transform:
   m_GameObject: {fileID: 5528693680254461414}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 11, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -168,6 +169,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4338952368176662071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5528693680254461414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e622d67f9e39447bbdb9d568320544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applePrefab: {fileID: 651300697045972766, guid: dc15b0d8961b0e6449930828201f6cf9, type: 3}
+  speed: 10
+  leftAndRightEdge: 24
+  changeDirChance: 0.1
+  appleDropDelay: 1
 --- !u!1 &7219301577458751105
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +198,7 @@ GameObject:
   - component: {fileID: 888135481428654358}
   - component: {fileID: 6529749741338743181}
   - component: {fileID: 4188490361210318481}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Leaves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
