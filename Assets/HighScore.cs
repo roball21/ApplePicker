@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnituEngine.UI;
+using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
@@ -9,7 +9,7 @@ public class HighScore : MonoBehaviour
     static private int _SCORE = 1000;
 
     void Awake() {
-        _UI_TEXT = GetComponent<TEXT>();
+        _UI_TEXT = GetComponent<Text>();
 
         // if the PlayerPrefs HighScore already exists, reat it
         if (PlayerPrefs.HasKey("HighScore")) {

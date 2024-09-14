@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
+    public ScoreCounter scoreCounter;
     // Start is called before the first frame update
     void Start()
     {
+        // find a GameObject named ScoreCounter in the Scene Hierarchy
+        GameObject scoreGo = GameObject.Find("ScoreCounter");
+        // get the ScoreCounter (Script) component of scoreGo
+        scoreCounter = scoreGo.GetComponent<ScoreCounter>();
         
     }
 
