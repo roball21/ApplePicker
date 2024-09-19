@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 8d557895a4011cf4a92b337b8a295eb3
+guid: 9688692c59707d046810befd9b94e904
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - basketPrefab: {fileID: 4171551519562124791, guid: dfedfe0ec7532b843bf198103146f2d1, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

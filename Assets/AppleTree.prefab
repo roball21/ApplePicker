@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 4338952368176662071}
   m_Layer: 8
   m_Name: AppleTree
-  m_TagString: Untagged
+  m_TagString: AppleTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applePrefab: {fileID: 651300697045972766, guid: dc15b0d8961b0e6449930828201f6cf9, type: 3}
+  badApplePrefab: {fileID: 651300697045972766, guid: 5c265ad5506e3f04a8609857ad8ba1e4, type: 3}
   speed: 10
   leftAndRightEdge: 24
   changeDirChance: 0.1

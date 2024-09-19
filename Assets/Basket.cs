@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Basket : MonoBehaviour
 {
     public ScoreCounter scoreCounter;
+    private GameOver GameOverText;
     // Start is called before the first frame update
     void Start()
     {
@@ -12,7 +14,10 @@ public class Basket : MonoBehaviour
         GameObject scoreGo = GameObject.Find("ScoreCounter");
         // get the ScoreCounter (Script) component of scoreGo
         scoreCounter = scoreGo.GetComponent<ScoreCounter>();
-        
+
+        // find gameOver instance
+        GameOverText = FindObjectOfType<GameOver>();
+        Debug.Log("GameOver instance: " + GameOverText);
     }
 
     // Update is called once per frame
@@ -40,6 +45,18 @@ public class Basket : MonoBehaviour
             // increase the score
             scoreCounter.score += 100;
             HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
+        }
+
+        //bad apple
+        if (collidedWith.CompareTag("BadApple")) {
+            Destroy(collidedWith);
+           
+            // game over
+            if (GameOverText != null) {
+                GameOverText.TriggerGameOver();
+            } else {
+                Debug.LogError("GameOver instance is null!");
+            }
         }
     }
 }

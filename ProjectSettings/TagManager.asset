@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - BadApple
   - Apple
+  - RestartButton
+  - AppleTree
+  - HighScore
+  - GameOverText
+  - ScoreCounter
   layers:
   - Default
   - TransparentFX
