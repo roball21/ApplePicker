@@ -14,11 +14,12 @@ public class ApplePicker : MonoBehaviour
     public List<GameObject> basketList;
     private GameOver GameOverText;
 
+   
     // Start is called before the first frame update
     void Start()
     {
-        
         GameOverText = FindObjectOfType<GameOver>();
+        
         basketList = new List<GameObject>();
         for (int i = 0; i < numBaskets; i++) {
             GameObject tBasketGo = Instantiate<GameObject>(basketPrefab);
