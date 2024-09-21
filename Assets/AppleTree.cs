@@ -22,12 +22,17 @@ public class AppleTree : MonoBehaviour
     // seconds between Apples instantiations
     public float appleDropDelay = 2f;
 
+    public float tossHeight = 2f;
+
+    public float tossDuration = 1f;
+
+
     // Start is called before the first frame update
     void Start()
     {
         // start dropping apples
         Invoke("DropApple", 2f);
-        Invoke("DropBadApple", 7f);
+        Invoke("DropBadApple", 11f);
     }
 
     void DropApple() 
@@ -40,9 +45,33 @@ public class AppleTree : MonoBehaviour
     void DropBadApple() 
     {
         GameObject badApple = Instantiate<GameObject>(badApplePrefab);
-        badApple.transform.position = transform.position;
-        
-        Invoke("DropBadApple", 5f);
+        StartCoroutine(TossBadApple(badApple));
+        Invoke("DropBadApple", 11f);
+    }
+      IEnumerator TossBadApple(GameObject badApple)
+    {
+        Vector3 startPos = transform.position;
+        Vector3 peakPos = startPos + Vector3.up * tossHeight;
+        float elapsedTime = 0f;
+
+        // Move up to the peak
+        while (elapsedTime < tossDuration / 2)
+        {
+            badApple.transform.position = Vector3.Lerp(startPos, peakPos, (elapsedTime / (tossDuration / 2)));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        elapsedTime = 0f;
+        Vector3 endPos = startPos;
+
+        // Move down to the original position
+        while (elapsedTime < tossDuration / 2)
+        {
+            badApple.transform.position = Vector3.Lerp(peakPos, endPos, (elapsedTime / (tossDuration / 2)));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Update is called once per frame

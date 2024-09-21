@@ -8,7 +8,7 @@ public class HighScore : MonoBehaviour
     static private Text _UI_TEXT;
     static private int _SCORE = 1000;
 
-    void Awake() {
+    void Start() {
         _UI_TEXT = GetComponent<Text>();
 
         // if the PlayerPrefs HighScore already exists, reat it

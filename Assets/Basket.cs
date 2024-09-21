@@ -7,9 +7,15 @@ public class Basket : MonoBehaviour
 {
     public ScoreCounter scoreCounter;
     private GameOver GameOverText;
+    public int level;
+
+    private Round round;
+
     // Start is called before the first frame update
     void Start()
     {
+
+        level = 1000;
         // find a GameObject named ScoreCounter in the Scene Hierarchy
         GameObject scoreGo = GameObject.Find("ScoreCounter");
         // get the ScoreCounter (Script) component of scoreGo
@@ -18,6 +24,8 @@ public class Basket : MonoBehaviour
         // find gameOver instance
         GameOverText = FindObjectOfType<GameOver>();
         Debug.Log("GameOver instance: " + GameOverText);
+
+        round = FindObjectOfType<Round>();
     }
 
     // Update is called once per frame
@@ -44,6 +52,15 @@ public class Basket : MonoBehaviour
             Destroy(collidedWith);
             // increase the score
             scoreCounter.score += 100;
+            
+            if (scoreCounter.score >= level) {
+                level += 1000;
+                if (scoreCounter.score >= 4000) {
+                    GameOverText.TriggerGameOver();
+                }
+                
+                round.NextRound();
+            }
             HighScore.TRY_SET_HIGH_SCORE(scoreCounter.score);
         }
 
